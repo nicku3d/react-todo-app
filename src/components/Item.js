@@ -18,7 +18,6 @@ export default function Item(props) {
         props.onKeyDown(e);
     };
 
-
     return (
         <li>
             <EditableInput
