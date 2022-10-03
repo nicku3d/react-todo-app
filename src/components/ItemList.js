@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './ItemList.css';
 import Item from './Item';
 import ItemStatus from '../utils/ItemStatus';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class ItemList extends Component {
     constructor(props) {
@@ -86,16 +86,18 @@ export default class ItemList extends Component {
 
     render () {
         return (
-            <div className="App">
-                <div>
-                    <input 
-                        value={this.state.value} 
-                        onChange={this.handleChange} 
-                        onKeyDown={this.handleKeyDown} 
-                        type="text" 
-                    />
-                    <button onClick={this.addItem}>+</button>
-                    <ul>
+            <div>
+                <div className='d-flex justify-content-center m-5'>
+                        <input className='form-control d-block' 
+                            value={this.state.value} 
+                            onChange={this.handleChange} 
+                            onKeyDown={this.handleKeyDown} 
+                            type="text" 
+                        />
+                        <button className="m-2 btn btn-primary" onClick={this.addItem}>+</button>
+                </div>
+                <div className='d-flex justify-content-center'>
+                    <ul className='list-group w-50'>
                     {Array.from(this.state.items).map((element) => {
                         const item = element[1];
                         if (item.status === ItemStatus.InProgress) {
@@ -108,10 +110,11 @@ export default class ItemList extends Component {
                                 />
                             );
                         }
+                        return '';
                     })}
                     </ul>
                 </div>
-          </div>
+            </div>
         );
     }
 }

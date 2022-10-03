@@ -1,4 +1,5 @@
 import EditableInput from "./EditableInput";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Item(props) {
 
@@ -19,7 +20,7 @@ export default function Item(props) {
     };
 
     return (
-        <li>
+        <li className="list-group-item d-flex justify-content-between">
             <EditableInput
                 value={props.name}
                 showInput={props.showInput}
@@ -28,8 +29,10 @@ export default function Item(props) {
                 onDoubleClick={handleDoubleClick}
                 onKeyDown={handleKeyDown}
             />
-            <button onClick={() => {props.onDone(props.id)}}>v</button>
-            <button onClick={() => {props.onDelete(props.id)}}>x</button>
+            <div class="btn-group">
+                <button className="btn btn-success" onClick={() => {props.onDone(props.id)}}>v</button>
+                <button className="btn btn-danger" onClick={() => {props.onDelete(props.id)}}>x</button>
+            </div>
         </li>
     );
 }
