@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Item from './Item';
 import ItemStatus from '../utils/ItemStatus';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { AiOutlinePlus } from 'react-icons/ai'
 
 export default class ItemList extends Component {
     constructor(props) {
@@ -94,7 +94,9 @@ export default class ItemList extends Component {
                             onKeyDown={this.handleKeyDown} 
                             type="text" 
                         />
-                        <button className="m-2 btn btn-primary" onClick={this.addItem}>+</button>
+                        <button className="m-2 btn btn-primary bg-light text-dark" onClick={this.addItem}>
+                            <AiOutlinePlus/>
+                        </button>
                 </div>
                 <div className='d-flex justify-content-center'>
                     <ul className='list-group w-50'>

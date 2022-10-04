@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function EditableInput(props) {
     return (
@@ -15,7 +14,7 @@ export default function EditableInput(props) {
                 autoFocus
             />
           ) : (
-            <span className="d-block-inline w-100 align-middle"
+            <span className="d-block-inline w-100 align-middle text-truncate"
                 onDoubleClick={props.onDoubleClick}
             >
             {props.value}

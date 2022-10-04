@@ -1,5 +1,5 @@
 import EditableInput from "./EditableInput";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { AiOutlineClose, AiOutlineCheck } from 'react-icons/ai'
 
 export default function Item(props) {
 
@@ -29,9 +29,13 @@ export default function Item(props) {
                 onDoubleClick={handleDoubleClick}
                 onKeyDown={handleKeyDown}
             />
-            <div class="btn-group">
-                <button className="btn btn-success" onClick={() => {props.onDone(props.id)}}>v</button>
-                <button className="btn btn-danger" onClick={() => {props.onDelete(props.id)}}>x</button>
+            <div className="btn-group">
+                <button className="btn btn-success bg-light text-dark" onClick={() => {props.onDone(props.id)}}>
+                    <AiOutlineCheck/>
+                </button>
+                <button className="btn btn-danger bg-light text-dark" onClick={() => {props.onDelete(props.id)}}>
+                    <AiOutlineClose/>
+                </button>
             </div>
         </li>
     );
