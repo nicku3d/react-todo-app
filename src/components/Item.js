@@ -29,14 +29,12 @@ export default function Item(props) {
                 onDoubleClick={handleDoubleClick}
                 onKeyDown={handleKeyDown}
             />
-            <div className="btn-group">
-                <button className="btn btn-success bg-light text-dark" onClick={() => {props.onDone(props.id)}}>
+                <button className="btn btn-success bg-light text-dark m-1" onClick={() => {props.onDone(props.id)}}>
                     <AiOutlineCheck/>
                 </button>
-                <button className="btn btn-danger bg-light text-dark" onClick={() => {props.onDelete(props.id)}}>
+                <button className="btn btn-danger bg-light text-dark m-1" onClick={() => {props.onDelete(props.id)}}>
                     <AiOutlineClose/>
                 </button>
-            </div>
         </li>
     );
 }
